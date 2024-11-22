@@ -4,6 +4,7 @@ import RentalForm from "./component/RentalForm";
 import AddProductForm from "./component/AddProductForm";
 import ProcessPurchaseForm from "./component/ProcessPurchaseForm";
 import GenerateBillForm from "./component/GenerateBillForm";
+import UnassignInventory from "./component/UnassignInventory";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <ProductAssignment />
       <RentalForm />
       <ProcessPurchaseForm />
+      <UnassignInventory />
       <GenerateBillForm />
     </div>
   );

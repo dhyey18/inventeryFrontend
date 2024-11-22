@@ -3,7 +3,6 @@ import axios from "axios";
 
 const RentalForm = () => {
   const [users, setUsers] = useState([]); // State to store users
-  const [products, setProducts] = useState([]); // State to store products
   const [selectedUserId, setSelectedUserId] = useState(""); // Selected user ID
   const [rentalDuration, setRentalDuration] = useState(1);
   const [error, setError] = useState(null);
@@ -16,12 +15,6 @@ const RentalForm = () => {
       .get("http://localhost:3000/api/user/allUser")
       .then((response) => setUsers(response.data))
       .catch((error) => console.log("Error fetching users", error));
-
-    // Fetch the list of products (optional, assuming products are needed)
-    axios
-      .get("http://localhost:5000/api/products")
-      .then((response) => setProducts(response.data))
-      .catch((error) => console.log("Error fetching products", error));
   }, []);
 
   const handleUserIdChange = (e) => setSelectedUserId(e.target.value);

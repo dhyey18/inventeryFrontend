@@ -24,13 +24,16 @@ function ProductAssignment() {
   const handleAssignProduct = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/api/inventory/assign", {
-        userId: selectedUser,
-        productId: selectedProduct,
-      });
+      const result = await axios.post(
+        "http://localhost:3000/api/inventory/assign",
+        {
+          userId: selectedUser,
+          productId: selectedProduct,
+        }
+      );
       setMessage("Product assigned successfully!");
     } catch (error) {
-      setMessage("Error assigning product");
+      setMessage(error.response.data.error);
     }
   };
 
